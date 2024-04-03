@@ -77,3 +77,13 @@ textarea {
   resize: none;
   padding: 10px;
 }
+
+.washing {
+  display: flex;
+  align-items: center;
+}
+
+.sink {
+  display: flex;
+  align-items: center;
+}

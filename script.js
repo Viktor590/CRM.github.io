@@ -5,11 +5,12 @@ const todayDate = document.getElementById('inputData');
 const nameOne = document.querySelector('.inputName');
 const formBlock = document.querySelector('.form-block')
 
-
 let date = new Date();
 todayDate.innerHTML = `Дата: ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 
 const kitchenTable = `
+  <form class="form-table">
+
   <div class="form-row about">
       <div class="form-group col-md-3">
     <label for="exampleFormControlSelect1">Изделие</label>
@@ -79,7 +80,25 @@ const kitchenTable = `
 
    <div class="form-row cooking">
     <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Варка</label>
+    <label for="exampleFormControlSelect1">Варочная панель</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Накладная</option>
+      <option>В уровень</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="exampleFormControlSelect1">Количество</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="exampleFormControlSelect1">Стоимость</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+   </div>
+
+   <div class="form-row cooking">
+    <div class="form-group col-md-4">
+    <label for="exampleFormControlSelect1">Вырезы</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Накладная</option>
       <option>В уровень</option>
@@ -97,15 +116,10 @@ const kitchenTable = `
 
    <div class="form-row washing">
     <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Тип мойки</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Вырез под накладную</option>
-      <option>Вырез и крепление подстольной</option>
-      <option>Интегрированная</option>
-    </select>
+      Мойка Интегрированная
   </div>
   <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Артикул Мойки</label>
+    <label for="exampleFormControlSelect1">Артикул</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Артикул Мойки 1</option>
       <option>Артикул Мойки 2</option>
@@ -114,7 +128,7 @@ const kitchenTable = `
       <option>Артикул Мойки 5</option>
     </select>
   </div>
-  <div class="form-group col-md-3">
+  <div class="form-group col-md-2">
     <label for="exampleFormControlSelect1">Модель</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Модель Мойки 1</option>
@@ -128,10 +142,16 @@ const kitchenTable = `
     <label for="exampleFormControlSelect1">Кол-во</label>
     <input type="number" class="form-control" id="exampleFormControlSelect1">
   </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Стоимость</label>
+  <div class="form-group col-md-1">
+    <label for="exampleFormControlSelect1">Процент</label>
     <input type="number" class="form-control" id="exampleFormControlSelect1">
   </div>
+  <div class="form-group col-md-1">
+    <label for="exampleFormControlSelect1">Цена</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+     <button type="button" class="btn btn-danger">Добавить мойку</button>
+
    </div>
 
 
@@ -142,6 +162,25 @@ const kitchenTable = `
       <option>Кромка 1</option>
       <option>Кромка 2</option>
       <option>Кромка 3</option>
+    </select>
+  </div>
+   <div class="form-group col-md-1">
+    <label for="exampleFormControlSelect1">Кол-во</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+  <div class="form-group col-md-2">
+    <label for="exampleFormControlSelect1">Стоимость</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+   </div>
+
+   <div class="form-row edge">
+    <div class="form-group col-md-4">
+    <label for="exampleFormControlSelect1">Бортики</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Бортик 1</option>
+      <option>Бортик 2</option>
+      <option>Бортик 3</option>
     </select>
   </div>
    <div class="form-group col-md-1">
@@ -175,8 +214,12 @@ const kitchenTable = `
    </div>
    <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
    <p class="rest">Общая стоимость изделия:</p>
+
+</form>
 `
 const bathroomTable = `
+  <form class="form-table">
+
   <div class="form-row about">
       <div class="form-group col-md-3">
     <label for="exampleFormControlSelect1">Изделие</label>
@@ -244,15 +287,10 @@ const bathroomTable = `
 
    <div class="form-row sink">
     <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Тип мойки</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Вырез под накладную</option>
-      <option>Вырез и крепление подстольной</option>
-      <option>Интегрированная</option>
-    </select>
-  </div>
+      Раковина Интегрированная
+    </div>
   <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Артикул Мойки</label>
+    <label for="exampleFormControlSelect1">Артикул</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Артикул Мойки 1</option>
       <option>Артикул Мойки 2</option>
@@ -261,7 +299,7 @@ const bathroomTable = `
       <option>Артикул Мойки 5</option>
     </select>
   </div>
-  <div class="form-group col-md-3">
+  <div class="form-group col-md-2">
     <label for="exampleFormControlSelect1">Модель</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Модель Мойки 1</option>
@@ -275,10 +313,16 @@ const bathroomTable = `
     <label for="exampleFormControlSelect1">Кол-во</label>
     <input type="number" class="form-control" id="exampleFormControlSelect1">
   </div>
-  <div class="form-group col-md-2">
+  <div class="form-group col-md-1">
+    <label for="exampleFormControlSelect1">Процент</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+  <div class="form-group col-md-1">
     <label for="exampleFormControlSelect1">Стоимость</label>
     <input type="number" class="form-control" id="exampleFormControlSelect1">
   </div>
+     <button type="button" class="btn btn-danger">Добавить раковину</button>
+
    </div>
 
 
@@ -341,6 +385,7 @@ const bathroomTable = `
    </div>
    <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
 <p class="rest">Общая стоимость изделия:</p>
+</form>
 `
 const panel = `
   <div class="form-row about">
@@ -557,7 +602,99 @@ const windowsill = `
 <p class="rest">Общая стоимость изделия:</p>
 `
 const shelf = `
-   <div class="form-row">
+<div class="form-row about">
+      <div class="form-group col-md-3">
+    <label for="exampleFormControlSelect1">Изделие</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Полка 1</option>
+      <option>Полка 2</option>
+      <option>Полка 3</option>
+      <option>Полка 4</option>
+      <option>Полка 5</option>
+    </select>
+  </div>
+    <div class="form-group col-md-3">
+    <label for="exampleFormControlSelect1">Материал</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Камень</option>
+      <option>Кварц</option>
+    </select>
+  </div>
+    <div class="form-group col-md-3">
+    <label for="exampleFormControlSelect1">Бренд</label>
+    <select class="form-control id="exampleFormControlSelect1">
+      <option>Бренд 1</option>
+      <option>Бренд 2</option>
+      <option>Бренд 3</option>
+      <option>Бренд 4</option>
+      <option>Бренд 5</option>
+    </select>
+  </div>
+  <div class="form-group col-md-3">
+      <label for="inputState">Артикул</label>
+      <select id="inputState" class="form-control">
+        <option selected>Артикул 1</option>
+        <option>Артикул 2</option>
+        <option>Артикул 3</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="size">
+    <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputCity">Длина</label>
+      <input type="number" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputZip">Ширина</label>
+      <input type="number" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputCity">Общая площадь</label>
+      <input type="number" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Кол-во Материала</label>
+      <input type="number" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Стоимость</label>
+      <input type="number" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <button type="button" class="btn btn-danger size-btn">Добавить размеры</button>
+  </div>
+
+
+
+    <div class="form-row work">
+    <div class="form-group col-md-4">
+    <label for="exampleFormControlSelect1">Доп.работы</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Доп.работа 1</option>
+      <option>Доп.работа 2</option>
+      <option>Доп.работа 3</option>
+    </select>
+  </div>
+   <div class="form-group col-md-1">
+    <label for="exampleFormControlSelect1">Кол-во</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+  <div class="form-group col-md-2">
+    <label for="exampleFormControlSelect1">Стоимость</label>
+    <input type="number" class="form-control" id="exampleFormControlSelect1">
+  </div>
+   </div>
+   <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
+<p class="rest">Общая стоимость изделия:</p>
+
+`
+const comment = `
+  <textarea name="" id="" cols="50" rows="5" maxlength="500" placeholder="Для комментариев"></textarea>
+`
+const addWork = `
+  <div class="form-row">
     <div class="form-group col-md-2 froze">
       Замер
   </div>
@@ -599,11 +736,7 @@ const shelf = `
   </div>
    </div>
 `
-const comment = `
-  <textarea name="" id="" cols="50" rows="5" maxlength="500" placeholder="Для комментариев"></textarea>
-`
-
-const arrPosition = [kitchenTable, bathroomTable, windowsill, panel, comment]
+const arrPosition = [kitchenTable, bathroomTable, panel, windowsill, shelf, addWork, comment]
 
 function hai(element) {
   const tableForm = document.createElement('form')
@@ -615,7 +748,6 @@ function hai(element) {
 
 buttons.forEach((num, i) => {
   num.addEventListener('click', () => {
-    // formBlock.append(hai(comment))
     arrPosition.forEach((n, a) => {
       if (i == a) {
         formBlock.append(hai(n))
