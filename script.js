@@ -1,9 +1,12 @@
 "use strict"
-
 const buttons = document.querySelectorAll('.btns-finish');
 const todayDate = document.getElementById('inputData');
-const nameOne = document.querySelector('.inputName');
 const formBlock = document.querySelector('.form-block')
+const sizeBtn = document.querySelector('.size-btn')
+const sizeBlock = document.querySelector('.')
+const inputGroupLength = document.querySelector('.size__length-block')
+const inputGroupLarge = document.querySelector('.size__large-block')
+const res = document.querySelector('.res')
 
 let date = new Date();
 todayDate.innerHTML = `Дата: ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
@@ -736,6 +739,25 @@ const addWork = `
   </div>
    </div>
 `
+const newSize = `
+            <div class="form-group col-md-6">
+              <label for="#">Длина</label>
+              <input type="number" class="form-control size__length">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="#">Ширина</label>
+              <input type="number" class="form-control size__large">
+            </div>
+`
+const inputLength = `
+<label for="#">Длина</label>
+<input type="number" class="form-control size__length">
+`
+const inputLarge = `
+  <label for="#">Ширина</label>
+  <input type="number" class="form-control size__large">
+`
+
 const arrPosition = [kitchenTable, bathroomTable, panel, windowsill, shelf, addWork, comment]
 
 function hai(element) {
@@ -756,3 +778,42 @@ buttons.forEach((num, i) => {
 
   })
 });
+
+function addSizeInput(element) {
+  const newSizeForm = document.createElement('div')
+  newSizeForm.classList.add('size__length-block--wrapper')
+  newSizeForm.innerHTML = element
+  return newSizeForm
+}
+
+
+sizeBtn.addEventListener('click', () => {
+  inputGroupLength.append(addSizeInput(inputLength));
+  inputGroupLarge.append(addSizeInput(inputLarge));
+})
+
+
+summInputs()
+
+function summInputs() {
+
+  inputGroupLength.addEventListener('input', () => {
+    let sum = 0;
+    inputGroupLength.querySelectorAll('input').forEach(el => sum += +el.value)
+    res.textContent = `Результат ${sum}`;
+    res.textContent = Array.from(
+      inputGroupLength.querySelectorAll('.size__length'),
+      input => Number(input.value)
+    ).reduce((a, b) => a + b);
+
+  });
+
+
+}
+
+
+
+
+
+
+

@@ -1,243 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Калькулятор</title>
 </head>
+
 <body>
 
- <div class="form-row header">
+  <div class="form-row header">
     <div class="form-group col-md-4">
       <label for="inputName">Имя</label>
-      <input class="form-control inputName" type="text" >
+      <input class="form-control inputName" type="text">
     </div>
     <div class="form-group col-md-4">
       <label for="inputCurs">Курс</label>
       <input type="number" class="form-control" id="inputCurs">
     </div>
     <div class="form-group col-md-4 header-date">
-      <p id="inputData"><p/>
+      <p id="inputData">
+        <p />
     </div>
-    </div>
+  </div>
 
-    <div class="form-block">
-      
-    </div>
+  <div class="form-block">
 
-  <!-- <form class="form-table">
-   
-  <div class="form-row about">
+  </div>
+
+  <form class="form-table">
+
+    <div class="form-row about">
       <div class="form-group col-md-3">
-    <label for="exampleFormControlSelect1">Изделие</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Столешница кухня 1</option>
-      <option>Столешница кухня 2</option>
-      <option>Столешница кухня 3</option>
-      <option>Столешница кухня 4</option>
-      <option>Столешница кухня 5</option>
-    </select>
-  </div>
-    <div class="form-group col-md-3">
-    <label for="exampleFormControlSelect1">Материал</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Камень</option>
-      <option>Кварц</option>
-    </select>
-  </div>
-    <div class="form-group col-md-3">
-    <label for="exampleFormControlSelect1">Бренд</label>
-    <select class="form-control id="exampleFormControlSelect1">
-      <option>Бренд 1</option>
-      <option>Бренд 2</option>
-      <option>Бренд 3</option>
-      <option>Бренд 4</option>
-      <option>Бренд 5</option>
-    </select>
-  </div>
-  <div class="form-group col-md-3">
-      <label for="inputState">Артикул</label>
-      <select id="inputState" class="form-control">
-        <option selected>Артикул 1</option>
-        <option>Артикул 2</option>
-        <option>Артикул 3</option>
-      </select>
+        <label for="#">Изделие</label>
+        <select class="form-control">
+          <option>Столешница кухня 1</option>
+          <option>Столешница кухня 2</option>
+          <option>Столешница кухня 3</option>
+          <option>Столешница кухня 4</option>
+          <option>Столешница кухня 5</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="#">Материал</label>
+        <select class="form-control">
+          <option>Камень</option>
+          <option>Кварц</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="#">Бренд</label>
+        <select class="form-control">
+          <option>Бренд 1</option>
+          <option>Бренд 2</option>
+          <option>Бренд 3</option>
+          <option>Бренд 4</option>
+          <option>Бренд 5</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="#">Артикул</label>
+        <select class="form-control">
+          <option selected>Артикул 1</option>
+          <option>Артикул 2</option>
+          <option>Артикул 3</option>
+        </select>
+      </div>
     </div>
-  </div>
-  
-  <div class="size">
-    <div class="form-row">
-    <div class="form-group col-md-3">
-      <label for="inputCity">Длина</label>
-      <input type="number" class="form-control" id="inputCity">
+
+    <div class="size">
+      <div class="form-row">
+        <div class="form-block form-size">
+          <div class="form-row form-size__block">
+            <div class="form-group col-md-6 size__length-block">
+              <label for="#">Длина</label>
+              <input type="number" class="form-control size__length">
+            </div>
+            <div class="form-group col-md-6 size__large-block">
+              <label for="#">Ширина</label>
+              <input type="number" class="form-control size__large">
+            </div>
+            <div class="res"></div>
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="#">Общая площадь</label>
+          <input type="number" class="form-control size__sum">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="#">Кол-во Материала</label>
+          <input type="number" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="#">Стоимость</label>
+          <input type="number" class="form-control">
+        </div>
+      </div>
+      <button type="button" class="btn btn-danger size-btn">Добавить размеры</button>
+
+
     </div>
-    <div class="form-group col-md-3">
-      <label for="inputZip">Ширина</label>
-      <input type="number" class="form-control" id="inputZip">
+
+
+    <div class="form-row cooking">
+      <div class="form-group col-md-4">
+        <label for="#">Варочная панель</label>
+        <select class="form-control">
+          <option>Накладная</option>
+          <option>В уровень</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="#">Количество</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="#">Стоимость</label>
+        <input type="number" class="form-control">
+      </div>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputCity">Общая площадь</label>
-      <input type="number" class="form-control" id="inputCity">
+
+    <div class="form-row cooking">
+      <div class="form-group col-md-4">
+        <label for="#">Вырезы</label>
+        <select class="form-control">
+          <option>Накладная</option>
+          <option>В уровень</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="#">Количество</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="#">Стоимость</label>
+        <input type="number" class="form-control">
+      </div>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Кол-во Материала</label>
-      <input type="number" class="form-control" id="inputZip">
+
+    <div class="form-row washing">
+      <div class="form-group col-md-4">
+        Мойка Интегрированная
+      </div>
+      <div class="form-group col-md-2">
+        <label for="#">Артикул Мойки</label>
+        <select class="form-control">
+          <option>Артикул Мойки 1</option>
+          <option>Артикул Мойки 2</option>
+          <option>Артикул Мойки 3</option>
+          <option>Артикул Мойки 4</option>
+          <option>Артикул Мойки 5</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="#">Модель</label>
+        <select class="form-control">
+          <option>Модель Мойки 1</option>
+          <option>Модель Мойки 2</option>
+          <option>Модель Мойки 3</option>
+          <option>Модель Мойки 4</option>
+          <option>Модель Мойки 5</option>
+        </select>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Кол-во</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Процент</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Цена</label>
+        <input type="number" class="form-control">
+      </div>
+      <button type="button" class="btn btn-danger">Добавить мойку</button>
+
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Стоимость</label>
-      <input type="number" class="form-control" id="inputZip">
+
+
+    <div class="form-row edge">
+      <div class="form-group col-md-4">
+        <label for="#">Кромки</label>
+        <select class="form-control">
+          <option>Кромка 1</option>
+          <option>Кромка 2</option>
+          <option>Кромка 3</option>
+        </select>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Кол-во</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="#">Стоимость</label>
+        <input type="number" class="form-control">
+      </div>
     </div>
-  </div>
-  <button type="button" class="btn btn-danger size-btn">Добавить размеры</button>
 
-
-  </div>
-
-
-   <div class="form-row cooking">
-    <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Варочная панель</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Накладная</option>
-      <option>В уровень</option>
-    </select>
-  </div>
-  <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Количество</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-   </div>
-
-   <div class="form-row cooking">
-    <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Вырезы</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Накладная</option>
-      <option>В уровень</option>
-    </select>
-  </div>
-  <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Количество</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-   </div>
-
-   <div class="form-row washing">
-    <div class="form-group col-md-4">
-      Мойка Интегрированная
-  </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Артикул Мойки</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Артикул Мойки 1</option>
-      <option>Артикул Мойки 2</option>
-      <option>Артикул Мойки 3</option>
-      <option>Артикул Мойки 4</option>
-      <option>Артикул Мойки 5</option>
-    </select>
-  </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Модель</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Модель Мойки 1</option>
-      <option>Модель Мойки 2</option>
-      <option>Модель Мойки 3</option>
-      <option>Модель Мойки 4</option>
-      <option>Модель Мойки 5</option>
-    </select>
-  </div>
-   <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Кол-во</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Процент</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Цена</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-     <button type="button" class="btn btn-danger">Добавить мойку</button>
-
-   </div>
-
-
-   <div class="form-row edge">
-    <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Кромки</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Кромка 1</option>
-      <option>Кромка 2</option>
-      <option>Кромка 3</option>
-    </select>
-  </div>
-   <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Кол-во</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-   </div>
-
-   <div class="form-row edge">
-    <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Бортики</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Бортик 1</option>
-      <option>Бортик 2</option>
-      <option>Бортик 3</option>
-    </select>
-  </div>
-   <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Кол-во</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-   </div>
+    <div class="form-row edge">
+      <div class="form-group col-md-4">
+        <label for="#">Бортики</label>
+        <select class="form-control">
+          <option>Бортик 1</option>
+          <option>Бортик 2</option>
+          <option>Бортик 3</option>
+        </select>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Кол-во</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="#">Стоимость</label>
+        <input type="number" class="form-control">
+      </div>
+    </div>
 
 
     <div class="form-row work">
-    <div class="form-group col-md-4">
-    <label for="exampleFormControlSelect1">Доп.работы</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Доп.работа 1</option>
-      <option>Доп.работа 2</option>
-      <option>Доп.работа 3</option>
-    </select>
-  </div>
-   <div class="form-group col-md-1">
-    <label for="exampleFormControlSelect1">Кол-во</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-  <div class="form-group col-md-2">
-    <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
-  </div>
-   </div>
-   <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
-   <p class="rest">Общая стоимость изделия:</p>
+      <div class="form-group col-md-4">
+        <label for="#">Доп.работы</label>
+        <select class="form-control">
+          <option>Доп.работа 1</option>
+          <option>Доп.работа 2</option>
+          <option>Доп.работа 3</option>
+        </select>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="#">Кол-во</label>
+        <input type="number" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="#">Стоимость</label>
+        <input type="number" class="form-control">
+      </div>
+    </div>
+    <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
+    <p class="rest">Общая стоимость изделия:</p>
 
-</form> -->
+  </form>
 
-<!-- -------- -->
 
-<!-- <form class="form-table">
+  <!-- -------- -->
+
+  <!-- <form class="form-table">
    
   <div class="form-row about">
       <div class="form-group col-md-3">
@@ -407,10 +417,10 @@
 </form> -->
 
 
-<!-- ----- -->
+  <!-- ----- -->
 
 
-<!-- <form class="form-table">
+  <!-- <form class="form-table">
    
   <div class="form-row about">
       <div class="form-group col-md-3">
@@ -500,10 +510,10 @@
 <p class="rest">Общая стоимость изделия:</p>
 </form> -->
 
-<!-- ------ -->
+  <!-- ------ -->
 
 
-<!-- <form class="form-table">
+  <!-- <form class="form-table">
    
   <div class="form-row about">
       <div class="form-group col-md-3">
@@ -632,8 +642,8 @@
 
 </form> -->
 
-<!-- ------- -->
-<!-- <form class="form-table">
+  <!-- ------- -->
+  <!-- <form class="form-table">
    
   <div class="form-row about">
       <div class="form-group col-md-3">
@@ -722,11 +732,11 @@
    <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
 <p class="rest">Общая стоимость изделия:</p>
 </form> -->
-<!-- ------ -->
+  <!-- ------ -->
 
 
 
-<!-- <form class="form-table">
+  <!-- <form class="form-table">
   <div class="form-row">
     <div class="form-group col-md-2 froze">
       Замер
@@ -770,34 +780,35 @@
    </div>
 </form> -->
 
-<!-- ----- -->
+  <!-- ----- -->
 
-<!-- <form action="">
+  <!-- <form action="">
 
   <textarea name="" id="" cols="50" rows="5" maxlength="500" placeholder="Для комментариев"></textarea>
 </form> -->
 
-<div class="btns">
-<button type="button" class="btn btn-success btns-finish">Столешница Кух</button>
-<button type="button" class="btn btn-success btns-finish">Столешница С/У</button>
-<button type="button" class="btn btn-success btns-finish">Стен панели</button>
-<button type="button" class="btn btn-success btns-finish">Подоконники</button>
-<button type="button" class="btn btn-success btns-finish">Полки</button>
-<button type="button" class="btn btn-success btns-finish">Иное</button>
-<button type="button" class="btn btn-success btns-finish">Комментарий</button>
+  <div class="btns">
+    <button type="button" class="btn btn-success btns-finish">Столешница Кух</button>
+    <button type="button" class="btn btn-success btns-finish">Столешница С/У</button>
+    <button type="button" class="btn btn-success btns-finish">Стен панели</button>
+    <button type="button" class="btn btn-success btns-finish">Подоконники</button>
+    <button type="button" class="btn btn-success btns-finish">Полки</button>
+    <button type="button" class="btn btn-success btns-finish">Иное</button>
+    <button type="button" class="btn btn-success btns-finish">Комментарий</button>
 
-</div>
+  </div>
 
-<div class="finish">
-  <p class="summ">Общая стоимость:</p>
-  <p class="summ">Бонус дизайнера:</p>
-  <p class="summ">Процент:</p>
-  <p class="summ">Итого:</p>
-</div>
+  <div class="finish">
+    <p class="summ">Общая стоимость:</p>
+    <p class="summ">Бонус дизайнера:</p>
+    <p class="summ">Процент:</p>
+    <p class="summ">Итого:</p>
+  </div>
 
 
-<button type="button" class="btn btn-primary btn-lg btn-block">Сохранить</button>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Сохранить</button>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
