@@ -3,9 +3,8 @@ const buttons = document.querySelectorAll('.btns-finish');
 const todayDate = document.getElementById('inputData');
 const formBlock = document.querySelector('.form-block')
 const sizeBtn = document.querySelector('.size-btn')
-const sizeBlock = document.querySelector('.')
-const inputGroupLength = document.querySelector('.size__length-block')
-const inputGroupLarge = document.querySelector('.size__large-block')
+const sizeWrapper = document.querySelector('.form-size')
+const sizeBlock = document.querySelector('.form-size__block')
 const res = document.querySelector('.res')
 
 let date = new Date();
@@ -750,12 +749,27 @@ const newSize = `
             </div>
 `
 const inputLength = `
-<label for="#">Длина</label>
-<input type="number" class="form-control size__length">
+<div class="form-group col-md-6 size__length-block">
+  <label for="#">Длина</label>
+  <input type="number" class="form-control size__length">
+</div>
 `
 const inputLarge = `
-  <label for="#">Ширина</label>
-  <input type="number" class="form-control size__large">
+  <div class="form-group col-md-6 size__large-block">
+    <label for="#">Ширина</label>
+    <input type="number" class="form-control size__large">
+  </div>
+`
+
+const inputBlock = `
+<div class="form-group col-md-6 size__length-block">
+              <label for="#">Длина</label>
+              <input type="number" class="form-control size__length">
+            </div>
+            <div class="form-group col-md-6 size__large-block">
+              <label for="#">Ширина</label>
+              <input type="number" class="form-control size__large">
+            </div>
 `
 
 const arrPosition = [kitchenTable, bathroomTable, panel, windowsill, shelf, addWork, comment]
@@ -781,15 +795,15 @@ buttons.forEach((num, i) => {
 
 function addSizeInput(element) {
   const newSizeForm = document.createElement('div')
-  newSizeForm.classList.add('size__length-block--wrapper')
+  newSizeForm.classList.add('form-row')
+  newSizeForm.classList.add('form-size__block')
   newSizeForm.innerHTML = element
   return newSizeForm
 }
 
 
 sizeBtn.addEventListener('click', () => {
-  inputGroupLength.append(addSizeInput(inputLength));
-  inputGroupLarge.append(addSizeInput(inputLarge));
+  sizeWrapper.append(addSizeInput(inputBlock));
 })
 
 
@@ -797,12 +811,12 @@ summInputs()
 
 function summInputs() {
 
-  inputGroupLength.addEventListener('input', () => {
+  sizeBlock.addEventListener('input', () => {
     let sum = 0;
-    inputGroupLength.querySelectorAll('input').forEach(el => sum += +el.value)
+    sizeBlock.querySelectorAll('input').forEach(el => sum += +el.value)
     res.textContent = `Результат ${sum}`;
     res.textContent = Array.from(
-      inputGroupLength.querySelectorAll('.size__length'),
+      sizeBlock.querySelectorAll('.size__length'),
       input => Number(input.value)
     ).reduce((a, b) => a + b);
 
