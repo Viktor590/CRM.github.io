@@ -1,11 +1,22 @@
 "use strict"
+
 const buttons = document.querySelectorAll('.btns-finish');
 const todayDate = document.getElementById('inputData');
 const formBlock = document.querySelector('.form-block')
 const sizeBtn = document.querySelector('.size-btn')
-const sizeWrapper = document.querySelector('.form-size')
-const sizeBlock = document.querySelector('.form-size__block')
-const res = document.querySelector('.res')
+const sizeWrapper = document.querySelector('.size')
+const sizeBlock = document.querySelector('.size__wrapper-block')
+const sizeSumm = document.querySelector('.size__sum')
+const sizeMaterial = document.querySelector('.size__material')
+const sizePrice = document.querySelector('.size__price')
+const washBtn = document.querySelector('.wash__btn')
+const washWrapper = document.querySelector('.washing__wrapper')
+const workWrapper = document.querySelector('.work')
+const workBtn = document.querySelector('.work__btn')
+let sizeWrapperInput;
+let sizeDeleteButton;
+
+
 
 let date = new Date();
 todayDate.innerHTML = `Дата: ${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
@@ -739,37 +750,74 @@ const addWork = `
    </div>
 `
 const newSize = `
-            <div class="form-group col-md-6">
-              <label for="#">Длина</label>
-              <input type="number" class="form-control size__length">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="#">Ширина</label>
-              <input type="number" class="form-control size__large">
-            </div>
-`
-const inputLength = `
-<div class="form-group col-md-6 size__length-block">
-  <label for="#">Длина</label>
-  <input type="number" class="form-control size__length">
-</div>
-`
-const inputLarge = `
-  <div class="form-group col-md-6 size__large-block">
-    <label for="#">Ширина</label>
-    <input type="number" class="form-control size__large">
-  </div>
-`
+           <div class="form-block" style="display: flex;">
+            <div class="form-row form-size__block">
+              <div class="form-group col-md-6 size__length-block">
+                <label for="#">Длина</label>
+                <input type="number" class="form-control size__length">
+              </div>
+              <div class="form-group col-md-6 size__large-block">
+                <label for="#">Ширина</label>
+                <input type="number" class="form-control size__large">
+              </div>
 
-const inputBlock = `
-<div class="form-group col-md-6 size__length-block">
-              <label for="#">Длина</label>
-              <input type="number" class="form-control size__length">
             </div>
-            <div class="form-group col-md-6 size__large-block">
-              <label for="#">Ширина</label>
-              <input type="number" class="form-control size__large">
-            </div>
+          </div>
+`
+const addWash = `
+          <div class="form-group col-md-4">
+            Мойка Интегрированная
+          </div>
+          <div class="form-group col-md-2">
+            <label for="#">Артикул Мойки</label>
+            <select class="form-control">
+              <option>Артикул Мойки 1</option>
+              <option>Артикул Мойки 2</option>
+              <option>Артикул Мойки 3</option>
+              <option>Артикул Мойки 4</option>
+              <option>Артикул Мойки 5</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="#">Модель</label>
+            <select class="form-control">
+              <option>Модель Мойки 1</option>
+              <option>Модель Мойки 2</option>
+              <option>Модель Мойки 3</option>
+              <option>Модель Мойки 4</option>
+              <option>Модель Мойки 5</option>
+            </select>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Кол-во</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Процент</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Цена</label>
+            <input type="number" class="form-control">
+          </div>
+`
+const addServices = `
+        <div class="form-group col-md-4">
+          <label for="#">Доп.работы</label>
+          <select class="form-control">
+            <option>Доп.работа 1</option>
+            <option>Доп.работа 2</option>
+            <option>Доп.работа 3</option>
+          </select>
+        </div>
+        <div class="form-group col-md-1">
+          <label for="#">Кол-во</label>
+          <input type="number" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="#">Стоимость</label>
+          <input type="number" class="form-control">
+        </div>
 `
 
 const arrPosition = [kitchenTable, bathroomTable, panel, windowsill, shelf, addWork, comment]
@@ -796,34 +844,60 @@ buttons.forEach((num, i) => {
 function addSizeInput(element) {
   const newSizeForm = document.createElement('div')
   newSizeForm.classList.add('form-row')
-  newSizeForm.classList.add('form-size__block')
+  newSizeForm.classList.add('form-size')
+  newSizeForm.classList.add('col-md-6')
+  newSizeForm.classList.add('p-0')
   newSizeForm.innerHTML = element
   return newSizeForm
 }
 
-
-sizeBtn.addEventListener('click', () => {
-  sizeWrapper.append(addSizeInput(inputBlock));
-})
-
-
-summInputs()
-
-function summInputs() {
-
-  sizeBlock.addEventListener('input', () => {
-    let sum = 0;
-    sizeBlock.querySelectorAll('input').forEach(el => sum += +el.value)
-    res.textContent = `Результат ${sum}`;
-    res.textContent = Array.from(
-      sizeBlock.querySelectorAll('.size__length'),
-      input => Number(input.value)
-    ).reduce((a, b) => a + b);
-
-  });
-
-
+function addNewWashForm(element) {
+  const newWashForm = document.createElement('div')
+  newWashForm.classList.add('form-row')
+  newWashForm.classList.add('washing__block')
+  newWashForm.innerHTML = element
+  return newWashForm
 }
+
+function addNewServicesForm(element) {
+  const newServicesForm = document.createElement('div')
+  newServicesForm.classList.add('form-row')
+  newServicesForm.classList.add('work__block')
+  newServicesForm.innerHTML = element
+  return newServicesForm
+}
+
+addNewForm(sizeBtn, sizeBlock, newSize)
+addNewWash(washBtn, washWrapper, addWash)
+addNewServices(workBtn, workWrapper, addServices)
+
+function addNewForm(btn, block, newblock) {
+  btn.addEventListener('click', () => {
+    block.append(addSizeInput(newblock));
+    sizeWrapperInput = document.querySelectorAll('.form-size')
+  })
+}
+
+function addNewWash(btn, block, newblock) {
+  btn.addEventListener('click', () => {
+    block.append(addNewWashForm(newblock));
+  })
+}
+
+function addNewServices(btn, block, newblock) {
+  btn.addEventListener('click', () => {
+    block.append(addNewServicesForm(newblock));
+  })
+}
+
+sizeWrapper.addEventListener('input', () => {
+  let sum = 0;
+  let sum2 = 0;
+  sizeWrapper.querySelectorAll('.size__length').forEach(el => sum += +el.value)
+  sizeWrapper.querySelectorAll('.size__large').forEach(el => sum2 += +el.value)
+  sizeSumm.value = (sum * sum2).toFixed(2)
+  sizePrice.value = (sizeSumm.value * sizeMaterial.value).toFixed(2)
+});
 
 
 

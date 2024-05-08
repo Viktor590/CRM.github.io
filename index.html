@@ -72,8 +72,8 @@
     </div>
 
     <div class="size">
-      <div class="form-row">
-        <div class="form-block form-size">
+      <div class="form-row form-size">
+        <div class="form-block">
           <div class="form-row form-size__block">
             <div class="form-group col-md-6 size__length-block">
               <label for="#">Длина</label>
@@ -83,7 +83,7 @@
               <label for="#">Ширина</label>
               <input type="number" class="form-control size__large">
             </div>
-            <!-- <div class="res"></div> -->
+
           </div>
 
         </div>
@@ -93,16 +93,18 @@
         </div>
         <div class="form-group col-md-2">
           <label for="#">Кол-во Материала</label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control size__material">
         </div>
         <div class="form-group col-md-2">
           <label for="#">Стоимость</label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control size__price">
         </div>
       </div>
-      <button type="button" class="btn btn-danger size-btn">Добавить размеры</button>
+      <div class="size__wrapper-block">
+      </div>
 
-
+    </div>
+    <button type="button" class="btn btn-danger size-btn">Добавить размеры</button>
     </div>
 
 
@@ -143,42 +145,46 @@
     </div>
 
     <div class="form-row washing">
-      <div class="form-group col-md-4">
-        Мойка Интегрированная
+      <div class="washing__wrapper">
+        <div class="form-row washing__block">
+          <div class="form-group col-md-4">
+            Мойка Интегрированная
+          </div>
+          <div class="form-group col-md-2">
+            <label for="#">Артикул Мойки</label>
+            <select class="form-control">
+              <option>Артикул Мойки 1</option>
+              <option>Артикул Мойки 2</option>
+              <option>Артикул Мойки 3</option>
+              <option>Артикул Мойки 4</option>
+              <option>Артикул Мойки 5</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="#">Модель</label>
+            <select class="form-control">
+              <option>Модель Мойки 1</option>
+              <option>Модель Мойки 2</option>
+              <option>Модель Мойки 3</option>
+              <option>Модель Мойки 4</option>
+              <option>Модель Мойки 5</option>
+            </select>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Кол-во</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Процент</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="form-group col-md-1">
+            <label for="#">Цена</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
       </div>
-      <div class="form-group col-md-2">
-        <label for="#">Артикул Мойки</label>
-        <select class="form-control">
-          <option>Артикул Мойки 1</option>
-          <option>Артикул Мойки 2</option>
-          <option>Артикул Мойки 3</option>
-          <option>Артикул Мойки 4</option>
-          <option>Артикул Мойки 5</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="#">Модель</label>
-        <select class="form-control">
-          <option>Модель Мойки 1</option>
-          <option>Модель Мойки 2</option>
-          <option>Модель Мойки 3</option>
-          <option>Модель Мойки 4</option>
-          <option>Модель Мойки 5</option>
-        </select>
-      </div>
-      <div class="form-group col-md-1">
-        <label for="#">Кол-во</label>
-        <input type="number" class="form-control">
-      </div>
-      <div class="form-group col-md-1">
-        <label for="#">Процент</label>
-        <input type="number" class="form-control">
-      </div>
-      <div class="form-group col-md-1">
-        <label for="#">Цена</label>
-        <input type="number" class="form-control">
-      </div>
-      <button type="button" class="btn btn-danger">Добавить мойку</button>
+      <button type="button" class="btn btn-danger wash__btn">Добавить мойку</button>
 
     </div>
 
@@ -222,25 +228,27 @@
     </div>
 
 
-    <div class="form-row work">
-      <div class="form-group col-md-4">
-        <label for="#">Доп.работы</label>
-        <select class="form-control">
-          <option>Доп.работа 1</option>
-          <option>Доп.работа 2</option>
-          <option>Доп.работа 3</option>
-        </select>
-      </div>
-      <div class="form-group col-md-1">
-        <label for="#">Кол-во</label>
-        <input type="number" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="#">Стоимость</label>
-        <input type="number" class="form-control">
+    <div class="work">
+      <div class="form-row work__block">
+        <div class="form-group col-md-4">
+          <label for="#">Доп.работы</label>
+          <select class="form-control">
+            <option>Доп.работа 1</option>
+            <option>Доп.работа 2</option>
+            <option>Доп.работа 3</option>
+          </select>
+        </div>
+        <div class="form-group col-md-1">
+          <label for="#">Кол-во</label>
+          <input type="number" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="#">Стоимость</label>
+          <input type="number" class="form-control">
+        </div>
       </div>
     </div>
-    <button type="button" class="btn btn-danger">Добавить доп.услугу</button>
+    <button type="button" class="btn btn-danger work__btn">Добавить доп.услугу</button>
     <p class="rest">Общая стоимость изделия:</p>
 
   </form>
