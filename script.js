@@ -3,6 +3,7 @@
 const buttons = document.querySelectorAll('.btns-finish');
 const todayDate = document.getElementById('inputData');
 const formBlock = document.querySelector('.form-block')
+const formTable = document.querySelector('.form-table')
 const sizeBtn = document.querySelector('.size-btn')
 const sizeWrapper = document.querySelector('.size')
 const sizeBlock = document.querySelector('.size__wrapper-block')
@@ -13,6 +14,7 @@ const washBtn = document.querySelector('.wash__btn')
 const washWrapper = document.querySelector('.washing__wrapper')
 const workWrapper = document.querySelector('.work')
 const workBtn = document.querySelector('.work__btn')
+const resSumm = document.querySelector('.res__summ')
 let sizeWrapperInput;
 let sizeDeleteButton;
 
@@ -717,7 +719,7 @@ const addWork = `
   </div>
   <div class="form-group col-md-2">
     <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
+    <input type="number" class="form-control result" id="exampleFormControlSelect1">
   </div>
    </div>
 
@@ -731,7 +733,7 @@ const addWork = `
   </div>
   <div class="form-group col-md-2">
     <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
+    <input type="number" class="form-control result" id="exampleFormControlSelect1">
   </div>
    </div>
 
@@ -745,7 +747,7 @@ const addWork = `
   </div>
   <div class="form-group col-md-2">
     <label for="exampleFormControlSelect1">Стоимость</label>
-    <input type="number" class="form-control" id="exampleFormControlSelect1">
+    <input type="number" class="form-control result" id="exampleFormControlSelect1">
   </div>
    </div>
 `
@@ -798,7 +800,7 @@ const addWash = `
           </div>
           <div class="form-group col-md-1">
             <label for="#">Цена</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control result">
           </div>
 `
 const addServices = `
@@ -816,7 +818,7 @@ const addServices = `
         </div>
         <div class="form-group col-md-2">
           <label for="#">Стоимость</label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control result">
         </div>
 `
 
@@ -899,6 +901,11 @@ sizeWrapper.addEventListener('input', () => {
   sizePrice.value = (sizeSumm.value * sizeMaterial.value).toFixed(2)
 });
 
+formTable.addEventListener('input', () => {
+  let sum = 0;
+  formTable.querySelectorAll('.result').forEach(el => sum += +el.value)
+  resSumm.textContent = `${sum}Р`
+})
 
 
 
